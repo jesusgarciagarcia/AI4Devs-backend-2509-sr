@@ -58,28 +58,36 @@ npm install
 cd ../backend
 npm install
 ```
+
 3. Build the backend server:
+
 ```
 cd backend
 npm run build
 ````
+
 4. Start the backend server:
+
 ```
 cd backend
 npm start
 ```
+
 5. In a new terminal window, build the frontend server:
+
 ```
 cd frontend
 npm run build
 ```
+
 6. Start the frontend server:
+
 ```
 cd frontend
 npm start
 ```
 
-The backend server will be running at http://localhost:3010 and the frontend will be available at http://localhost:3000.
+The backend server will be running at <http://localhost:3010> and the frontend will be available at <http://localhost:3000>.
 
 ## Docker and PostgreSQL
 
@@ -92,6 +100,7 @@ Run the following command to start the Docker container:
 ```
 docker-compose up -d
 ```
+
 This will start a PostgreSQL database in a Docker container. The -d flag runs the container in detached mode, which means it runs in the background.
 
 To access the PostgreSQL database, you can use any PostgreSQL client with the following connection details:
@@ -101,7 +110,7 @@ To access the PostgreSQL database, you can use any PostgreSQL client with the fo
 - User: postgres
 - Password: password
 - Database: mydatabase
-  
+
 Please replace User, Password, and Database with the actual username, password, and database name specified in your .env file.
 
 To stop the Docker container, run the following command:
@@ -109,6 +118,7 @@ To stop the Docker container, run the following command:
 ```
 docker-compose down
 ```
+
 To generate the database using Prisma, follow these steps:
 
 1. Make sure that the .env file in the root directory of the backend contains the DATABASE_URL variable with the correct connection string to your PostgreSQL database. If it doesn’t work, try replacing the full URL directly in schema.prisma, in the url variable.
@@ -211,35 +221,44 @@ Para comenzar con este proyecto, sigue estos pasos:
 
 1. Clona el repositorio.
 2. Instala las dependencias para el frontend y el backend:
-```sh
-cd frontend
-npm install
 
-cd ../backend
-npm install
-```
+    ```sh
+    cd frontend
+    npm install
+
+    cd ../backend
+    npm install
+    ```
+
 3. Construye el servidor backend:
-```
-cd backend
-npm run build
-````
-4. Inicia el servidor backend:
-```
-cd backend
-npm start
-```
-5. En una nueva ventana de terminal, construye el servidor frontend:
-```
-cd frontend
-npm run build
-```
-6. Inicia el servidor frontend:
-```
-cd frontend
-npm start
-```
 
-El servidor backend estará corriendo en http://localhost:3010 y el frontend estará disponible en http://localhost:3000.
+    ```sh
+    cd backend
+    npm run build
+    ````
+
+4. Inicia el servidor backend:
+
+    ```sh
+    cd backend
+    npm start
+    ```
+
+5. En una nueva ventana de terminal, construye el servidor frontend:
+
+    ```sh
+    cd frontend
+    npm run build
+    ```
+
+6. Inicia el servidor frontend:
+
+    ```sh
+    cd frontend
+    npm start
+    ```
+
+El servidor backend estará corriendo en <http://localhost:3010> y el frontend estará disponible en <http://localhost:3000>.
 
 ## Docker y PostgreSQL
 
@@ -248,22 +267,26 @@ Este proyecto usa Docker para ejecutar una base de datos PostgreSQL. Así es có
 Instala Docker en tu máquina si aún no lo has hecho. Puedes descargarlo desde aquí.
 Navega al directorio raíz del proyecto en tu terminal.
 Ejecuta el siguiente comando para iniciar el contenedor Docker:
-```
+
+```sh
 docker-compose up -d
 ```
+
 Esto iniciará una base de datos PostgreSQL en un contenedor Docker. La bandera -d corre el contenedor en modo separado, lo que significa que se ejecuta en segundo plano.
 
 Para acceder a la base de datos PostgreSQL, puedes usar cualquier cliente PostgreSQL con los siguientes detalles de conexión:
- - Host: localhost
- - Port: 5432
- - User: postgres
- - Password: password
- - Database: mydatabase
+
+- Host: localhost
+- Port: 5432
+- User: postgres
+- Password: password
+- Database: mydatabase
 
 Por favor, reemplaza User, Password y Database con el usuario, la contraseña y el nombre de la base de datos reales especificados en tu archivo .env.
 
 Para detener el contenedor Docker, ejecuta el siguiente comando:
-```
+
+```sh
 docker-compose down
 ```
 
@@ -274,11 +297,12 @@ Para generar la base de datos utilizando Prisma, sigue estos pasos:
 2. Abre una terminal y navega al directorio del backend donde se encuentra el archivo `schema.prisma` y `seed.ts`.
 
 3. Ejecuta los siguientes comandos para generar la estructura de prisma, las migraciones a tu base de datos y poblarla con datos de ejemplo:
-```
-npx prisma generate
-npx prisma migrate dev
-ts-node seed.ts
-```
+
+    ```sh
+    npx prisma generate
+    npx prisma migrate dev
+    ts-node seed.ts
+    ```
 
 Una vez has dado todos los pasos, deberías poder guardar nuevos candidatos, tanto via web, como via API, verlos en la base de datos y obtenerlos mediante GET por id.
 
@@ -313,4 +337,3 @@ POST http://localhost:3010/candidates
     }
 }
 ```
-
